@@ -23,7 +23,6 @@ const Toast = () => {
 
   return (
     <div>
-      {console.log("success", alert)}
       <ToastContainer />
     </div>
   );

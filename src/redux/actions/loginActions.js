@@ -14,7 +14,6 @@ export const login = (data) => async (dispatch) => {
       payload: response.data.user,
     });
   } catch (error) {
-    console.log(error.message);
     dispatch({
       type: ALERT,
       payload: { error: error.response.data.message },
@@ -51,7 +50,6 @@ export const register = (data) => async (dispatch) => {
 };
 
 export const getUser = () => async (dispatch) => {
-  console.log("user");
   try {
     const response = await getDataAPI("getuser");
     dispatch({

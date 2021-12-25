@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Container, Button, Card, Alert } from "react-bootstrap";
+import { Form, Container, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/actions/loginActions";
@@ -30,12 +30,10 @@ export default function Login(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(data));
-    //history.push(props.location.state.from);
   };
 
   return (
     <div>
-      {console.log("props", props)}
       <Container>
         <Card className="mt-4">
           <Card.Header>Login</Card.Header>

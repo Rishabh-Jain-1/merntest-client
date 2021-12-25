@@ -1,9 +1,7 @@
-import React, { Children } from "react";
+import React from "react";
 import LoadingOverlay from "react-loading-overlay";
-import { useSelector } from "react-redux";
 import "./css/loader.styles.css";
 const Loader = ({ active, children }) => {
-  const { alert } = useSelector((state) => state);
   return (
     <LoadingOverlay
       active={active}

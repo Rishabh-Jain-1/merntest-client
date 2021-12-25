@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  Form,
-  Container,
-  Button,
-  Card,
-  ButtonGroup,
-  ToggleButton,
-} from "react-bootstrap";
+import { Form, Container, Button, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { login, register } from "../../redux/actions/loginActions";
+import { register } from "../../redux/actions/loginActions";
 
 export default function Register(props) {
   const dispatch = useDispatch();
@@ -27,7 +20,7 @@ export default function Register(props) {
     auth.isAuth && history.push(props.location.state?.from.pathname || "/");
   }, [auth.isAuth]);
 
-  const { email, password, fullname, username, gender } = data;
+  const { email, password, fullname, username } = data;
 
   const handleChange = (e) => {
     setData({

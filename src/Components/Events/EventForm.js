@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Container, Button, Card, Alert } from "react-bootstrap";
+import { Form, Container, Button, Card } from "react-bootstrap";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { createEvent } from "../../redux/actions/eventAction";
@@ -25,7 +25,6 @@ export default function EventForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
     const response = dispatch(createEvent(data));
     if (response) {
       history.push("/");

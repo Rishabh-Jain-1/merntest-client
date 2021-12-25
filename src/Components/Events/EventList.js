@@ -9,7 +9,7 @@ export default function EventList() {
   const { event } = useSelector((state) => state);
   useEffect(() => {
     dispatch(getEventList());
-  }, []);
+  }, [dispatch]);
   const demo = () => {
     return "1";
   };
