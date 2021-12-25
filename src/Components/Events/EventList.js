@@ -30,14 +30,22 @@ export default function EventList() {
               <th>End Date</th>
             </tr>
             {event &&
-              event.map((e, index) => (
+              (event.length > 0 ? (
+                event.map((e, index) => (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <td>{e.name}</td>
+                    <td>{e.organiser}</td>
+                    <td>{e.description}</td>
+                    <td>{moment(e.startDate).format("MM/DD/YYYY")}</td>
+                    <td>{moment(e.endDate).format("MM/DD/YYYY")}</td>
+                  </tr>
+                ))
+              ) : (
                 <tr>
-                  <td>{index + 1}</td>
-                  <td>{e.name}</td>
-                  <td>{e.organiser}</td>
-                  <td>{e.description}</td>
-                  <td>{moment(e.startDate).format("MM/DD/YYYY")}</td>
-                  <td>{moment(e.endDate).format("MM/DD/YYYY")}</td>
+                  <td colSpan={6} className="text-center">
+                    No Events to show
+                  </td>
                 </tr>
               ))}
           </thead>

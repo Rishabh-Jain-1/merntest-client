@@ -25,7 +25,7 @@ function App() {
       <Alert />
       <Header />
       <Switch>
-        <PrivateRoute exact path="/" component={EventList}></PrivateRoute>
+        <Route exact path="/" component={EventList}></Route>
         <Route path="/login" exact component={Login}></Route>
         <Route path="/logout" exact component={Logout}></Route>
         <Route path="/register" exact component={Register}></Route>
